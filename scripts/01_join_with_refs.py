@@ -8,15 +8,7 @@ with canonical hardware specifications using normalized exact and fuzzy matching
 import re
 
 import pandas as pd
-
-try:
-    from rapidfuzz import fuzz, process
-except ImportError:
-    print(
-        "Warning: 'rapidfuzz' not installed. Install via 'pip install rapidfuzz' for fuzzy matching."
-    )
-    process = None
-    fuzz = None
+from rapidfuzz import fuzz, process
 
 
 def clean_model_key(text: str) -> str:
